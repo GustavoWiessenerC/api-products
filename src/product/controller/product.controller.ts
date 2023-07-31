@@ -4,7 +4,7 @@ import { CreateProductDto } from '../dto/create-product.dto';
 import { ApiBody, ApiOperation } from '@nestjs/swagger';
 
 
-@Controller('products')
+@Controller('Products')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 

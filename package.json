@@ -13,7 +13,7 @@
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "test:api": "cd test/e2e-integration && npx cypress run --spec cypress/e2e/**/*.cy.ts",
+    "test:api": "cd test/e2e-integration && npx cypress run --record --key 7f76fe00-0ec9-442b-8ce9-7243e09b3eb6 --spec cypress/e2e/**/*.cy.ts",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",

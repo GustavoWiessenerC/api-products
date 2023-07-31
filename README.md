@@ -2,37 +2,43 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building  and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## API de Gerenciamento de Produtos
 
-## Description
+Este é um projeto de API para gerenciamento de Produtos. Ele permite criar e listar produtos.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Tecnologias utilizadas:
 
-## Installation
+<b>Node.js + Nest.js + TypeORM</b>: Node.js é uma plataforma de desenvolvimento backend que permite a criação de aplicações escaláveis e de alta performance utilizando JavaScript. Nest.js é um framework para Node.js que traz uma arquitetura modular e orientada por componentes, facilitando a criação de APIs robustas e bem estruturadas. TypeORM é um ORM (Object-Relational Mapping) que facilita a integração com bancos de dados relacionais, como o PostgreSQL.
+
+<b>PostgreSQL + ElephantSQL</b>: O PostgreSQL é um sistema de gerenciamento de banco de dados relacional de código aberto, escolhido para armazenar os dados da aplicação. O ElephantSQL é uma plataforma que oferece hospedagem e gerenciamento de bancos de dados PostgreSQL em nuvem.
+
+<b>Cypress + Cypress Dashboard Cloud + TypeScript:</b> O Cypress é uma ferramenta de teste de ponta a ponta (end-to-end) com ele é possível criar testes automatizados que simulam as interações e integrações com serviços externos. O TypeScript é uma linguagem que adiciona tipagem estática ao JavaScript, o que ajuda a evitar erros e torna o código mais seguro e legível.
+
+<b>Docker:</b> O Docker é uma plataforma que permite empacotar, distribuir e executar aplicações em containers, proporcionando maior portabilidade e facilidade de implantação.
+
+<b>SonarCloud</b>: O SonarCloud é uma ferramenta de análise estática de código que ajuda a identificar e corrigir problemas de qualidade de código, tais como bugs, vulnerabilidades e código duplicados, dentre outros problemas.
+
+<b>Render:</b> Render é uma plataforma de hospedagem que oferece infraestrutura simples e escalável para aplicações web.
+
+### Serviços:
+
+A API oferece os seguintes endpoints:
+
+- POST /products/: Cria um novo Produto.
+- GET /products/: Retorna a lista de todos os Produtos.
+
+### Documentação da API:
+
+- A API está documentada usando a especificação Swagger. Para acessar a documentação da API, acesse https://api-product-zsoa.onrender.com/api.
+
+
+## Instalação
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Inicialização da aplicação:
 
 ```bash
 # development
@@ -45,29 +51,25 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+### Jobs:
 
-```bash
-# unit tests
-$ npm run test
+![](jobs.PNG)
 
-# e2e tests
-$ npm run test:e2e
+<p align="center">
+  <a href="https://github.com/GustavoWiessenerC/api-products/actions" target="_blank">Link para as Actions do GitHub.</a>
+</p>
 
-# test coverage
-$ npm run test:cov
-```
+### Coberturas de Testing API:
 
-## Support
+![](api-testing.PNG)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+<p align="center">
+  <a href="https://cloud.cypress.io/projects/roxue7/runs?branches=%5B%5D&committers=%5B%5D&flaky=%5B%5D&page=1&status=%5B%5D&tags=%5B%5D&timeRange=%7B%22startDate%22%3A%221970-01-01%22%2C%22endDate%22%3A%222038-01-19%22%7D" target="_blank">Link para os resultados dos testes Cypress em Ambiente Cloud.</a>
+</p>
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Métricas SonarCloud:
 
-## License
+![](sonar-cloud-init.PNG)
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+![](sonar-cloud.PNG)
