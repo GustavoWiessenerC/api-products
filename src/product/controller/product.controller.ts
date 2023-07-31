@@ -1,6 +1,8 @@
 import { Controller, Post, Get, Body, HttpException, HttpStatus, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ProductService } from '../service/product.service';
 import { CreateProductDto } from '../dto/create-product.dto';
+import { ApiBody, ApiOperation } from '@nestjs/swagger';
+
 
 @Controller('products')
 export class ProductController {
@@ -8,6 +10,8 @@ export class ProductController {
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true })) 
+  @ApiBody({ type: CreateProductDto }) 
+  @ApiOperation({ summary: 'Create a new product' }) 
   async createProduct(@Body() createProductDto: CreateProductDto) {
     try {
       return await this.productService.createProduct(createProductDto);
@@ -16,7 +20,9 @@ export class ProductController {
     }
   }
 
+
   @Get()
+  @ApiOperation({ summary: 'Get all products' }) 
   async getAllProducts() {
     return await this.productService.getAllProducts();
   }

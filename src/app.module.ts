@@ -7,10 +7,10 @@ import { ProductModule } from './product/product.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres', 
-      host: 'mahmud.db.elephantsql.com',
-      username: 'qfmpeajm',
-      password: '0FZoCoiUJN2jz1LYpLDbnTIDs-dd56v4',
-      database: 'qfmpeajm',
+      host: process.env.HOST,
+      username: process.env.USERNAME,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE,
       autoLoadEntities: true
     }),
     ProductModule,
