@@ -67,4 +67,4 @@ jobs:
         run: npm run test:api
 
       - name: Stop Docker container
-        run: docker stop $(docker ps -q --filter ancestor=my-app)
+        run: docker stop $(docker ps -q --filter ancestor=node-app)
