@@ -56,12 +56,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
-      - name: Start application
-        run: npm run start
+
+      - name: Build Docker image
+        run: docker build -t node-app .
+
+      - name: Start application with Docker
+        run: docker run -d -p 8080:8080 node-app
 
       - name: Wait for application to be available
-        run: sleep 10
-      
-      - name: Run E2E tests
+        run: npx wait-for-localhost:8080
+
+      - name: Run E2E tests with Docker
         run: npm run test:api
+
+      - name: Stop Docker container
+        run: docker stop $(docker ps -q --filter ancestor=my-app)
