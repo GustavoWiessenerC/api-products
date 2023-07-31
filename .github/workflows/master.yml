@@ -101,8 +101,7 @@ jobs:
       - name: deploy to render
         run: |
           echo "Deploying version ${{ steps.get_version.outputs.version }} to render.com in pull request jobs"
-          # Add your actual deploy script here, e.g., deploying to render.com
-
+    
       - name: register deploy status
         run: echo "Deployment completed successfully" >> deployment_log.txt
 
