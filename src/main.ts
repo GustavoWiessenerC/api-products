@@ -13,7 +13,7 @@ async function bootstrap() {
     .setTitle('API Product integration')
     .setDescription('API for the Product Integration process.')
     .setVersion('1.0')
-    .addTag('Products')
+    .addTag('Products', 'Health')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
