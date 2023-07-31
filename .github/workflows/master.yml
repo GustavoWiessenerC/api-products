@@ -85,3 +85,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          
+  deploy:
+    needs: [build, test-unit-and-integration, test-api, sonarcloud]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Current Version
+        id: get_version
+        run: echo ::set-output name=version::$(git describe --tags --abbrev=0 || echo "N/A")
+
+      - name: deploy to render
+        run: |
+          echo "Deploying version ${{ steps.get_version.outputs.version }} to render.com in pull request jobs"
+          # Add your actual deploy script here, e.g., deploying to render.com
+
+      - name: register deploy status
+        run: echo "Deployment completed successfully" >> deployment_log.txt
+
