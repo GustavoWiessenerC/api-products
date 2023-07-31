@@ -4,7 +4,6 @@ import { Product } from '../../../src/product/entity/product.entity';
 import { Repository } from 'typeorm';
 
 describe('Product Entity', () => {
-  let productRepository: Repository<Product>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -16,7 +15,7 @@ describe('Product Entity', () => {
       ],
     }).compile();
 
-    productRepository = module.get<Repository<Product>>(getRepositoryToken(Product));
+    
   });
 
   it('should be defined', () => {

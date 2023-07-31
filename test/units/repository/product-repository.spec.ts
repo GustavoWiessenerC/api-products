@@ -6,7 +6,6 @@ import { Product } from '../../../src/product/entity/product.entity';
 
 describe('ProdutoRepository', () => {
   let produtoRepository: ProdutoRepository;
-  let baseRepository: Repository<Product>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -20,7 +19,6 @@ describe('ProdutoRepository', () => {
     }).compile();
 
     produtoRepository = module.get<ProdutoRepository>(ProdutoRepository);
-    baseRepository = module.get<Repository<Product>>(getRepositoryToken(Product));
   });
 
   it('should be defined', () => {

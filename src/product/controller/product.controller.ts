@@ -10,7 +10,7 @@ export class ProductController {
   @UsePipes(new ValidationPipe({ transform: true })) 
   async createProduct(@Body() createProductDto: CreateProductDto) {
     try {
-      return this.productService.createProduct(createProductDto);
+      return await this.productService.createProduct(createProductDto);
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }
@@ -18,6 +18,6 @@ export class ProductController {
 
   @Get()
   async getAllProducts() {
-    return this.productService.getAllProducts();
+    return await this.productService.getAllProducts();
   }
 }
