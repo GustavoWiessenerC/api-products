@@ -1,5 +1,5 @@
 # Define a imagem base
-FROM node:18
+FROM node:iron-bookworm-slim
 
 # Define os argumentos passados durante o build
 ARG HOST
